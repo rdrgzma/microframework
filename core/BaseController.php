@@ -5,6 +5,7 @@ abstract class BaseController{
     protected $view;
     private $viewPath;
     private $layoutPath;
+    private $pageTitle = null;
 
     public function _construct(){
         $this->view = new \stdClass;
@@ -27,11 +28,15 @@ abstract class BaseController{
             echo "Error: View path not found!";
         }
     }
-        protected function layout(){
+    protected function layout(){
         if(file_exists(__DIR__."/../app/Views/{$this->layoutPath}.phtml")){
             require_once __DIR__."/../app/Views/{$this->layoutPath}.phtml";
         } else{
             echo "Error: Layout path not found!";
         }
+    }
+
+    protected function setPageTitle($pageTitle){
+        $this->pageTitle = $pageTitle;
     }
 }

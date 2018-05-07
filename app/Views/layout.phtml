@@ -1,5 +1,16 @@
-<h1>Página com Layout</h1>
-<?php
-$this->content()
-?>
-<p>View com layout</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Microframework MVC</title>
+    <link href="/assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+      <?php require_once __DIR__."/menu.phtml";?>
+    <?php $this->content() ?>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
